@@ -20,7 +20,7 @@ Users can add tasks with a title and duration, mark tasks with a tick box, and e
 
 You can download the apk directly on your android device and install. Allow from unknown sources!!
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Download the app](https://drive.google.com/file/d/1W2R2SntgRGX4Ci0oKBvdbvHgbGUwFtU5/view?usp=sharing)
 
 ## To Run the app
 
