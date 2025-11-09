@@ -12,8 +12,9 @@ void main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(ItemModelAdapter());
-  await Hive.openBox<ItemModel>('items');
+  var box = await Hive.openBox<ItemModel>('items');
 
+  await box.clear();
   Get.put(ThemeController());
   runApp(const MyApp());
 }
@@ -25,15 +26,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeController _themeController = Get.find();
-    return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: _themeController.isDark.value
-          ? ThemeMode.dark
-          : ThemeMode.light,
-      home: SplashScreen(),
-      debugShowCheckedModeBanner: false,
-    );
+    return Obx(() {
+      return GetMaterialApp(
+        title: 'Flutter Demo',
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: _themeController.isDark.value
+            ? ThemeMode.dark
+            : ThemeMode.light,
+        home: SplashScreen(),
+        debugShowCheckedModeBanner: false,
+      );
+    });
   }
 }

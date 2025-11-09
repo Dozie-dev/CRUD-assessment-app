@@ -50,7 +50,7 @@ class AppTheme {
     ), // subtle text
     bodyLarge: TextStyle(color: Colors.white, fontSize: 20),
     titleLarge: TextStyle(
-      color: Colors.black,
+      color: Colors.white,
       fontSize: 20,
       fontWeight: FontWeight.w600,
     ),
@@ -69,6 +69,7 @@ class AppTheme {
       backgroundColor: AppColors.lightPrimary,
     ),
     textTheme: lightTextTheme,
+    cardColor: AppColors.white,
 
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStatePropertyAll(AppColors.lightPrimary),
@@ -88,6 +89,7 @@ class AppTheme {
       iconTheme: IconThemeData(color: AppColors.darkText),
     ),
     textTheme: darkTextTheme,
+    cardColor: AppColors.black,
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: AppColors.darkPrimary,
     ),

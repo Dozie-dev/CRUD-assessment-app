@@ -22,7 +22,7 @@ class _HomescreenState extends State<Homescreen> {
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: theme.appBarTheme.backgroundColor,
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -68,6 +68,7 @@ class _HomescreenState extends State<Homescreen> {
 
               return Expanded(
                 child: ListView.builder(
+                  scrollDirection: Axis.vertical,
                   itemCount: itemController.items.length,
                   itemBuilder: (context, index) {
                     final item = itemController.items[index];
@@ -77,9 +78,10 @@ class _HomescreenState extends State<Homescreen> {
                       onDismissed: (_) => itemController.deleteItem(index),
                       background: Container(color: Colors.red),
                       child: Container(
+                        margin: EdgeInsets.only(bottom: 15),
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: theme.cardColor,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             if (theme.brightness == Brightness.light)

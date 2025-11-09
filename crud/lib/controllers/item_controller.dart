@@ -17,8 +17,8 @@ class ItemController extends GetxController {
     //-- Add default items if box is empty
     if (box.isEmpty) {
       box.add(ItemModel(title: 'Sample Task 1', duration: '1 Month'));
-      box.add(ItemModel(title: 'Sample Task 2',  duration: '2 Weeks'));
-      box.add(ItemModel(title: 'Sample Task 3',  duration: '5 Months'));
+      box.add(ItemModel(title: 'Sample Task 2', duration: '2 Weeks'));
+      box.add(ItemModel(title: 'Sample Task 3', duration: '5 Months'));
     }
     items.assignAll(box.values.toList());
   }
@@ -27,7 +27,7 @@ class ItemController extends GetxController {
     final box = HiveBoxes.getItemsBox();
     final newItem = ItemModel(title: title, duration: duration);
     await box.add(newItem);
-    items.add(newItem); 
+    items.add(newItem);
   }
 
   void updateItem(int index, String newTitle, String duration) async {
@@ -35,13 +35,13 @@ class ItemController extends GetxController {
     final key = box.keyAt(index);
     final updatedItem = ItemModel(title: newTitle, duration: duration);
     await box.put(key, updatedItem);
-    items[index] = updatedItem; 
+    items[index] = updatedItem;
   }
 
   void deleteItem(int index) async {
     final box = HiveBoxes.getItemsBox();
     final key = box.keyAt(index);
     await box.delete(key);
-    items.removeAt(index); 
+    items.removeAt(index);
   }
 }

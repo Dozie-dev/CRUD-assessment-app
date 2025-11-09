@@ -46,7 +46,7 @@ class _AddeditscreenState extends State<Addeditscreen> {
         backgroundColor: AppColors.primaryColor,
         leading: GestureDetector(
           onTap: Get.back,
-          child: Icon(Icons.arrow_back_ios, color: theme.iconTheme.color),
+          child: Icon(Icons.arrow_back_ios, color: Colors.white),
         ),
         title: Text(
           widget.isEditing ? 'Edit Item' : 'Add Item',

@@ -66,7 +66,7 @@ class AppButton extends StatelessWidget {
                   Text(
                     title!,
                     style: theme.textTheme.displayMedium?.copyWith(
-                      color: adaptiveText,
+                      color: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
                   )),
